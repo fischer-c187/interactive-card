@@ -315,6 +315,10 @@ body {
   background-color: hsl(278deg, 68%, 11%);
   padding: 15px 0;
 }
+.btn:hover {
+  background-color: #3f115a;
+  cursor: pointer;
+}
 
 .error[error-message]::after {
   content: attr(error-message);
