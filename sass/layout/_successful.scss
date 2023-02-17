@@ -1,0 +1,21 @@
+.successful {
+  &__img {
+    width: 80px;
+    margin: 35px auto;
+  }
+
+  &__title {
+    font-size: rem(28);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: em(3.5);
+    margin-bottom: em(16);
+  }
+
+  &__detail {
+    color: $succes-detail;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: em(48);
+  }
+}

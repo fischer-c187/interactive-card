@@ -1,0 +1,101 @@
+.card-ilustration {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: no-repeat $bg-image-mobile;
+  background-size: cover;
+  background-size: 100% 80%;
+
+  @include desktop {
+    background: none;
+    width: 50%;
+    align-items: center;
+  }
+}
+
+.card {
+  width: 286px;
+  height: 157px;
+  border-radius: 8px;
+  background-size: cover;
+  margin: 0 16px;
+  position: relative;
+  color: white;
+
+  @include desktop {
+    width: 447px;
+    height: 245px;
+  }
+
+}
+
+.front-card {
+  background-image: $bg-front-card;
+  z-index: 1000;
+  transform: translate(0, 126px);
+  padding: 20px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.50);
+
+  &__logo {
+    width: 22%;
+  }
+    
+  &__number {
+    font-size: 1rem;
+    letter-spacing: 2.2px;
+    position: absolute;
+    bottom: 32%;
+
+    @include desktop {
+      font-size: rem(28);
+    }
+  }
+
+  &__name, &__date {
+    font-size: 0.5rem;
+    position: absolute;
+    bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+
+    @include desktop {
+      font-size: rem(14);
+    }
+  }
+
+  &__date {
+    right: 20px;
+  }
+
+  @include desktop {
+    transform: translate(0);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+
+}
+
+.back-card {
+  background-image: $bg-back-card;
+  background-size: cover;
+  z-index: 100;
+  align-self: flex-end;
+  transform: translate(0, -120px);
+
+  &__cvc {
+    position: absolute;
+    bottom: 48%; right: 13%;
+    font-size: 0.5rem;
+    color: white;
+
+    @include desktop {
+      font-size: rem(14);
+    }
+  }
+
+  @include desktop {
+    transform: translate(0);
+    margin-top: em(36);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+}

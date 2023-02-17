@@ -1,0 +1,15 @@
+.app {
+  width: clamp($page-min-width, 100%, $page-max-width-mobile);
+  max-height: $page-max-height;
+  margin: 0 auto;
+
+  @include desktop {
+    width: min(100%, $page-max-width);
+    height: min(100%, $page-max-height);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: $bg-image-desktop no-repeat left ;
+  }
+}
+

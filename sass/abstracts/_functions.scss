@@ -1,0 +1,7 @@
+@function rem($pixel-size, $base-size: 18) {
+  @return calc($pixel-size / $base-size) + rem;
+}
+
+@function em($pixel-size, $base-size: 18) {
+  @return calc($pixel-size / $base-size) + em;
+}

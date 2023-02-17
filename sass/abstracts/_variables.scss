@@ -1,0 +1,25 @@
+$primary-color: hsl(278, 68%, 11%);
+$error-color: hsl(0, 100%, 66%);
+$button-color: hsl(278, 68%, 11%);
+$secondary-color: hsl(270, 3%, 87%);
+$btn-active-gradient: linear-gradient(180deg, rgba(100,72,254,1) 0%, rgba(96,5,148,1) 100%);
+$succes-detail: hsl(279, 6%, 55%);
+
+$opacity-placeholder: 0.25;
+
+$page-max-height: 900px;
+$page-max-width: 1440px;
+$page-max-width-mobile: 650px;
+$page-min-width: 375px;
+
+$bg-front-card: url('../images/bg-card-front.png');
+$bg-back-card: url('../images/bg-card-back.png');
+$bg-image-desktop: url('../images/bg-main-desktop.png');
+$bg-image-mobile: url('../images/bg-main-mobile.png');
+
+$main-font-family: 'Space Grotesk', sans-serif;
+$main-font-size: 18px;
+
+$breakpoints: (
+  desktop: 1100px
+);

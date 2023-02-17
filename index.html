@@ -1,102 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <!-- displays site properly based on user's device -->
-
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./app.js" defer></script>
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    >
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
-    />
+    >
     <title>FInteractive card details form</title>
+
   </head>
   <body>
     <main class="app">
       <div class="card-ilustration">
-        <div class="front-card">
-          <img src="./images/card-logo.svg" alt="logo de la carte" />
-          <div class="front-card__number">0000 0000 0000 0000</div>
+        <div class="front-card card">
+          <img src="./images/card-logo.svg" alt="logo de la carte" class="front-card__logo">
+          <div class="front-card__number" >0000 0000 0000 0000</div>
           <div class="front-card__name">Jane Appleseed</div>
           <div class="front-card__date">
             <span class="month">00</span>/<span class="year">00</span>
           </div>
         </div>
-        <div class="back-card">
-          <div class="back-card__cvc">000</div>
+        <div class="back-card card">
+          <p class="back-card__cvc">000</p>
         </div>
       </div>
 
-      <form action="#" class="card-information">
-        <div class="card-information__card-Area">
+      <form action="index.html" class="card-information">
+
           <label class="card-information__label" for="card-name">
             Cardholder Name
           </label>
-          <input
-            type="text"
-            class="card-information__input card-information__name"
-            name="owner-name"
-            id="card-name"
-            placeholder="e.g. Jane Appleseed"
-          >
-        </div>
-        <div class="card-information__card-Area">
+          <span class="error">
+            <input
+              type="text"
+              class="input card-information__name error"
+              name="owner-name"
+              id="card-name"
+              placeholder="e.g. Jane Appleseed"
+            >
+          </span>
+
+
           <label class="card-information__label" for="card-nbr">
             Card Number
           </label>
-          <input
-            type="text"
-            class="card-information__input card-information__nbr"
-            name="number"
-            id="card-nbr"
-            placeholder="e.g. 1234 5678 9123 0000"
-          >
-        </div>
+          <span class="error">
+            <input
+              type="text"
+              class="input card-information__nbr"
+              name="number"
+              id="card-nbr"
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+            >
+          </span>
+
         <div class="card-information__card-area">
           <div class="card-information__card-area--half">
             <label class="card-information__label" for="card-date">
               Exp. Date (MM/YY)
             </label>
-            <input
-              type="text"
-              class="card-information__input card-information__expiry"
-              name="expiry-month"
-              id="card-date"
-              placeholder="MM"
-            >
-            <input
-              type="text"
-              class="card-information__input card-information__expiry"
-              name="expiry-year"
-              placeholder="YY"
-            >
+            <span class="error">
+              <input
+                type="text"
+                class="input card-information__expiry"
+                name="expiry-month"
+                id="card-date"
+                placeholder="MM"
+                maxlength="2"
+              >
+              <input
+                type="text"
+                class="input card-information__expiry"
+                name="expiry-year"
+                placeholder="YY"
+                maxlength="2"
+                pattern="[0-9]+"
+              >
+            </span>
+
           </div>
           <div class="card-information__card-area--half">
             <label class="card-information__label" for="card-cvc">
               CVC
             </label>
-            <input
-              type="text"
-              class="card-information__input card-information__cvc"
-              name="expiry-month"
-              id="card-cvc"
-              placeholder="e.g. 123 Confirm"
-            >
+            <span class="error">
+              <input
+                type="text"
+                class="input card-information__cvc"
+                name="cvc"
+                id="card-cvc"
+                placeholder="e.g. 123 Confirm"
+                maxlength="3"
+              >
+            </span>
           </div>
 
         </div>
 
-        <button type="submit" class="card-information__btn-submit">Confirm</button>
+        <button type="submit" class="card-information__btn-submit btn">Confirm</button>
       </form>
     </main>
-
-    e.g. Jane Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY)
-    MM YY CVC e.g. 123 Confirm
-
-    <!-- Completed state start -->
-
-    Thank you! We've added your card details Continue
   </body>
 </html>

@@ -1,0 +1,15 @@
+html {
+  font-size: $main-font-size;
+  font-family: $main-font-family;
+
+  height: 100%;
+}
+
+body {
+  height: 100%;
+
+  @include desktop {
+    display: flex;
+    align-items: center;
+  }
+}

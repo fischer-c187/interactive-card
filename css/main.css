@@ -1,0 +1,337 @@
+@charset "UTF-8";
+/***
+    The new CSS reset - version 1.8.2 (last updated 23.12.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+pre {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: "";
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+@media (min-width: 1100px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.app {
+  width: clamp(375px, 100%, 650px);
+  max-height: 900px;
+  margin: 0 auto;
+}
+@media (min-width: 1100px) {
+  .app {
+    width: min(100%, 1440px);
+    height: min(100%, 900px);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: url("../images/bg-main-desktop.png") no-repeat left;
+  }
+}
+
+.card-ilustration {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: no-repeat url("../images/bg-main-mobile.png");
+  background-size: cover;
+  background-size: 100% 80%;
+}
+@media (min-width: 1100px) {
+  .card-ilustration {
+    background: none;
+    width: 50%;
+    align-items: center;
+  }
+}
+
+.card {
+  width: 286px;
+  height: 157px;
+  border-radius: 8px;
+  background-size: cover;
+  margin: 0 16px;
+  position: relative;
+  color: white;
+}
+@media (min-width: 1100px) {
+  .card {
+    width: 447px;
+    height: 245px;
+  }
+}
+
+.front-card {
+  background-image: url("../images/bg-card-front.png");
+  z-index: 1000;
+  transform: translate(0, 126px);
+  padding: 20px;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.5);
+}
+.front-card__logo {
+  width: 22%;
+}
+.front-card__number {
+  font-size: 1rem;
+  letter-spacing: 2.2px;
+  position: absolute;
+  bottom: 32%;
+}
+@media (min-width: 1100px) {
+  .front-card__number {
+    font-size: 1.5555555556rem;
+  }
+}
+.front-card__name, .front-card__date {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+@media (min-width: 1100px) {
+  .front-card__name, .front-card__date {
+    font-size: 0.7777777778rem;
+  }
+}
+.front-card__date {
+  right: 20px;
+}
+@media (min-width: 1100px) {
+  .front-card {
+    transform: translate(0);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.back-card {
+  background-image: url("../images/bg-card-back.png");
+  background-size: cover;
+  z-index: 100;
+  align-self: flex-end;
+  transform: translate(0, -120px);
+}
+.back-card__cvc {
+  position: absolute;
+  bottom: 48%;
+  right: 13%;
+  font-size: 0.5rem;
+  color: white;
+}
+@media (min-width: 1100px) {
+  .back-card__cvc {
+    font-size: 0.7777777778rem;
+  }
+}
+@media (min-width: 1100px) {
+  .back-card {
+    transform: translate(0);
+    margin-top: 2em;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.card-information {
+  width: clamp(327px, 90%, 381px);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.card-information input::placeholder {
+  color: hsl(278deg, 68%, 11%);
+  opacity: 0.25;
+}
+.card-information__name, .card-information__nbr {
+  width: 100%;
+}
+.card-information__label {
+  margin: 1.3636363636em 0 0.5em 0;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  letter-spacing: 2px;
+}
+.card-information__expiry {
+  width: 43%;
+}
+.card-information__cvc {
+  width: 100%;
+}
+.card-information__card-area {
+  display: flex;
+  margin-bottom: 20px;
+}
+.card-information__card-area--half {
+  width: 50%;
+  margin-top: 20px;
+}
+.card-information__card-area--half input {
+  margin-top: 9px;
+}
+@media (min-width: 1100px) {
+  .card-information {
+    margin: 0 130px;
+  }
+}
+
+.successful__img {
+  width: 80px;
+  margin: 35px auto;
+}
+.successful__title {
+  font-size: 1.5555555556rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1944444444em;
+  margin-bottom: 0.8888888889em;
+}
+.successful__detail {
+  color: hsl(279deg, 6%, 55%);
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 2.6666666667em;
+}
+
+.input {
+  border: 1px solid hsl(270deg, 3%, 87%);
+  border-radius: 8px;
+  padding: 0.6111111111em;
+  position: relative;
+}
+.input:focus {
+  border: 1px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(180deg, rgb(100, 72, 254) 0%, rgb(96, 5, 148) 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 8px;
+}
+
+.btn {
+  text-align: center;
+  width: 100%;
+  color: white;
+  border-radius: 8px;
+  background-color: hsl(278deg, 68%, 11%);
+  padding: 15px 0;
+}
+
+.error[error-message]::after {
+  content: attr(error-message);
+  display: none;
+  color: hsl(0deg, 100%, 66%);
+  font-size: 0.5rem;
+  margin: 0.8333333333em 0 0 0.8333333333em;
+  text-align: left;
+  line-height: 0.3;
+  transition: 0.3s;
+}
+.error[data-error-visible=true]::after {
+  display: block;
+}
+.error[data-error-visible=true] .input {
+  opacity: 1;
+  border-color: hsl(0deg, 100%, 66%);
+}
+
+/*# sourceMappingURL=main.css.map */

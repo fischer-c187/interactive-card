@@ -1,0 +1,16 @@
+.input {
+  border: 1px solid $secondary-color;
+  border-radius: 8px;
+  padding: em(11);
+  position: relative;
+
+  &:focus{
+    border: 1px solid transparent;
+    background-image: linear-gradient(white, white),
+                      $btn-active-gradient;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 8px;
+  }
+
+}
