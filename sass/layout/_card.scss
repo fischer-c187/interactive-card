@@ -33,7 +33,7 @@
 .front-card {
   background-image: $bg-front-card;
   z-index: 1000;
-  transform: translate(0, 126px);
+  top: 126px;
   padding: 20px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.50);
 
@@ -69,7 +69,7 @@
   }
 
   @include desktop {
-    transform: translate(0);
+    top: 0;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
   }
 
@@ -80,7 +80,8 @@
   background-size: cover;
   z-index: 100;
   align-self: flex-end;
-  transform: translate(0, -120px);
+  top: -120px;
+  
 
   &__cvc {
     position: absolute;
@@ -94,8 +95,16 @@
   }
 
   @include desktop {
-    transform: translate(0);
+    top: 0;
     margin-top: em(36);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
   }
+}
+
+.card__animation--out {
+  animation: 2500ms trans both ease-out;
+}
+
+.card__animation--in {
+  animation: 2500ms trans both ease-in;
 }

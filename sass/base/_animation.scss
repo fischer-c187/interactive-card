@@ -1,0 +1,16 @@
+@keyframes trans {
+  0%, 100%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  49% {
+    transform: translateX(280%);
+    opacity: 0; 
+  }
+  50% {
+    transform: translateX(-200%)
+  }
+}

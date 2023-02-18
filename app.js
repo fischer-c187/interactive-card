@@ -188,6 +188,17 @@ function createElement(tag, className, value = '') {
   element.innerText = value;
   return element;
 }
+function displayAnimation () {
+  const bc = document.querySelector('.back-card')
+  const fc = document.querySelector('.front-card')
+  bc.classList.toggle("card__animation--out")
+  fc.classList.toggle("card__animation--in")
+
+  setTimeout(() => {
+    bc.classList.toggle('card__animation--out')
+    fc.classList.toggle("card__animation--in")
+  }, 3000);
+}
 
 function displaySuccessMessage () {
   const form = document.querySelector('form')
@@ -215,7 +226,8 @@ function formValid (event) {
     }
   }
   if (isValid) {
-    displaySuccessMessage();
+    displayAnimation()
+    displaySuccessMessage()
   }
 }
 
@@ -226,4 +238,7 @@ const btnSubmit = document.querySelector('.btn')
 btnSubmit.addEventListener('click', formValid)
 initializeCardDisplay()
 const elements = initializeValidityEvent()
-
+setTimeout(() => {
+  console.log("test")
+}, 3000);
+console.log("premier")
